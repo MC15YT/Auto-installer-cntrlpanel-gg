@@ -217,13 +217,13 @@ sleep 2
 
 case "$OS" in
     debian)
-      PHP_SOCKET="/run/php/php8.1-fpm.sock"
+      PHP_SOCKET="/run/php/php8.3-fpm.sock"
       [ "$OS_VER_MAJOR" == "9" ] && SUPPORTED=true
       [ "$OS_VER_MAJOR" == "10" ] && SUPPORTED=true
       [ "$OS_VER_MAJOR" == "11" ] && SUPPORTED=true
     ;;
     ubuntu)
-      PHP_SOCKET="/run/php/php8.1-fpm.sock"
+      PHP_SOCKET="/run/php/php8.3-fpm.sock"
       [ "$OS_VER_MAJOR" == "18" ] && SUPPORTED=true
       [ "$OS_VER_MAJOR" == "20" ] && SUPPORTED=true
       [ "$OS_VER_MAJOR" == "22" ] && SUPPORTED=true
@@ -518,7 +518,8 @@ apt-get update -y && apt-get upgrade -y
 [ "$OS_VER_MAJOR" == "18" ] && apt-add-repository universe
 
 # Install Dependencies
-apt-get install -y php8.1 php8.1-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip,intl} mariadb-server nginx tar unzip git redis-server psmisc net-tools
+apt-get install -y php8.3 php8.3-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip,intl} mariadb-server nginx tar unzip git redis-server psmisc net-tools
+
 
 # Enable services
 enable_services_debian_based
@@ -542,7 +543,7 @@ curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | bash
 apt-get update -y && apt-get upgrade -y
 
 # Install Dependencies
-apt-get install -y php8.1 php8.1-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip,intl} mariadb-server nginx tar unzip git redis-server psmisc net-tools
+apt-get install -y php8.3 php8.3-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip,intl} mariadb-server nginx tar unzip git redis-server psmisc net-tools
 
 # Enable services
 enable_services_debian_based
